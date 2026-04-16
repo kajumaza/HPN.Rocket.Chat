@@ -88,3 +88,5 @@ dist
 matrix-federation-config/*
 .eslintcache
 tsconfig.typecheck.tsbuildinfo
+i18n_backup
+packages/rocketchat-i18n/i18n/
