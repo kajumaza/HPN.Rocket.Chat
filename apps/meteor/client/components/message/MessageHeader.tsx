@@ -15,6 +15,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import StatusIndicators from './StatusIndicators';
+import HpnMemberBadge from './header/HpnMemberBadge';
 import MessageRoles from './header/MessageRoles';
 import { useMessageRoles } from './header/hooks/useMessageRoles';
 import {
@@ -72,6 +73,7 @@ const MessageHeader = ({ message }: MessageHeaderProps): ReactElement => {
 				)}
 			</MessageNameContainer>
 			{shouldShowRolesList && <MessageRoles roles={roles} isBot={!!message.bot} />}
+			<HpnMemberBadge userId={message.u._id} roomId={message.rid} />
 			<MessageTimestamp id={`${message._id}-time`} title={formatDateAndTime(message.ts)}>
 				{formatTime(message.ts)}
 			</MessageTimestamp>

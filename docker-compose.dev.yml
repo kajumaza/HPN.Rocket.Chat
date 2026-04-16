@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    restart: on-failure
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGODB_REPLICA_SET_NAME: rs0
+      MONGODB_PORT_NUMBER: 27017
+      MONGODB_INITIAL_PRIMARY_HOST: mongo
+    entrypoint: |
+      bash -c
+        "mongod --replSet rs0 --bind_ip_all &
+          sleep 2;
+          until mongosh --eval \"db.adminCommand('ping')\" --quiet; do
+            echo '=====> Waiting for Mongo...';
+            sleep 1;
+          done;
+          echo \"=====> Initiating ReplicaSet...\";
+          mongosh --eval \"rs.initiate({_id: 'rs0', members: [{ _id: 0, host: 'localhost:27017' }]})\";
+          echo '=====> Done.';
+        wait"
+
+  nats:
+    image: nats:2.6-alpine
+    ports:
+      - 4222:4222
+
+volumes:
+  mongo-data:

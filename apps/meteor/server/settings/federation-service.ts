@@ -7,6 +7,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Enabled', false, {
 			type: 'boolean',
 			public: true,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: false,
@@ -16,6 +17,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Domain', '', {
 			type: 'string',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: '',
@@ -25,6 +27,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Matrix_Signing_Algorithm', 'ed25519', {
 			type: 'select',
 			public: false,
+			hidden: true,
 			values: [{ key: 'ed25519', i18nLabel: 'ed25519' }],
 			enterprise: true,
 			modules: ['federation'],
@@ -34,6 +37,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Matrix_Signing_Version', '0', {
 			type: 'string',
 			public: false,
+			hidden: true,
 			readonly: true,
 			enterprise: true,
 			modules: ['federation'],
@@ -46,6 +50,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Matrix_Signing_Key', randomKey, {
 			type: 'password',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: '',
@@ -54,6 +59,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_max_allowed_size_of_public_rooms_to_join', 100, {
 			type: 'int',
 			public: false,
+			hidden: true,
 			alert: 'Federation_Service_max_allowed_size_of_public_rooms_to_join_Alert',
 			enterprise: true,
 			modules: ['federation'],
@@ -65,11 +71,13 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 			i18nLabel: 'Federation_Service_Allow_List',
 			i18nDescription: 'Federation_Service_Allow_List_Description',
 			public: false,
+			hidden: true,
 		});
 
 		await this.add('Federation_Service_EDU_Process_Typing', true, {
 			type: 'boolean',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: false,
@@ -79,6 +87,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_EDU_Process_Presence', false, {
 			type: 'boolean',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: false,
@@ -88,6 +97,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Join_Encrypted_Rooms', false, {
 			type: 'boolean',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: false,
@@ -96,6 +106,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Join_Non_Private_Rooms', false, {
 			type: 'boolean',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: false,
@@ -104,6 +115,7 @@ export const createFederationServiceSettings = async (): Promise<void> => {
 		await this.add('Federation_Service_Validate_User_Domain', false, {
 			type: 'boolean',
 			public: false,
+			hidden: true,
 			enterprise: true,
 			modules: ['federation'],
 			invalidValue: false,

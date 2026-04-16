@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 import NavBarItemCreateNew from './NavBarItemCreateNew';
 import NavBarItemDirectoryPage from './NavBarItemDirectoryPage';
 import NavBarItemHomePage from './NavBarItemHomePage';
+import NavBarItemHpnDirectory from './NavBarItemHpnDirectory';
+import NavBarItemHpnJobs from './NavBarItemHpnJobs';
+import NavBarItemHpnPolls from './NavBarItemHpnPolls';
 import NavBarItemMarketPlaceMenu from './NavBarItemMarketPlaceMenu';
 import NavBarItemSort from './NavBarItemSort';
 import NavBarPagesStackMenu from './NavBarPagesStackMenu';
@@ -23,6 +26,9 @@ const NavBarPagesGroup = () => {
 			{!isTablet && (
 				<>
 					<NavBarItemHomePage title={t('Home')} />
+					<NavBarItemHpnDirectory title='Business Directory' />
+					<NavBarItemHpnJobs title='Job Board' />
+					<NavBarItemHpnPolls title='Polls & Surveys' />
 					<NavBarItemDirectoryPage title={t('Directory')} />
 				</>
 			)}

@@ -62,3 +62,6 @@ storybook-static
 development/tempo-data/
 
 .env
+
+# Artifact directory (nested tooling scripts, not HPN code)
+HPN.Rocket.Chat/

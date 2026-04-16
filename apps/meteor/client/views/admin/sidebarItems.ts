@@ -16,12 +16,6 @@ export const {
 		permissionGranted: (): boolean => hasPermission('view-statistics'),
 	},
 	{
-		href: '/admin/subscription',
-		i18nLabel: 'Subscription',
-		icon: 'card',
-		permissionGranted: (): boolean => hasPermission('manage-cloud'),
-	},
-	{
 		href: '/admin/engagement/users',
 		i18nLabel: 'Engagement',
 		icon: 'dashboard',
@@ -143,5 +137,35 @@ export const {
 		icon: 'customize',
 		permissionGranted: (): boolean =>
 			hasAtLeastOnePermission(['view-privileged-setting', 'edit-privileged-setting', 'manage-selected-settings']),
+	},
+	{
+		href: '/admin/hpn-directory',
+		i18nLabel: 'Business_Directory',
+		icon: 'building',
+		permissionGranted: (): boolean => hasPermission('view-room-administration'),
+	},
+	{
+		href: '/admin/hpn-jobs',
+		i18nLabel: 'Job_Board',
+		icon: 'clipboard',
+		permissionGranted: (): boolean => hasPermission('view-room-administration'),
+	},
+	{
+		href: '/admin/hpn-insights',
+		i18nLabel: 'HPN_Insights',
+		icon: 'dashboard',
+		permissionGranted: (): boolean => hasPermission('view-room-administration'),
+	},
+	{
+		href: '/admin/hpn-settings',
+		i18nLabel: 'HPN_Settings',
+		icon: 'customize',
+		permissionGranted: (): boolean => hasPermission('view-room-administration'),
+	},
+	{
+		href: '/admin/hpn-polls',
+		i18nLabel: 'Polls_and_Surveys',
+		icon: 'emoji',
+		permissionGranted: (): boolean => hasPermission('view-room-administration'),
 	},
 ]);

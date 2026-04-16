@@ -1,0 +1,12 @@
+{
+  "name": "hpn-community",
+  "version": "1.0.0",
+  "description": "HPN Community App",
+  "private": true,
+  "devDependencies": {
+    "@rocket.chat/apps-engine": "^1.43.0",
+    "@rocket.chat/ui-kit": "*",
+    "@types/node": "*",
+    "typescript": "^5.0.0"
+  }
+}

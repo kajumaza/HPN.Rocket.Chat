@@ -65,7 +65,7 @@ Meteor.startup(() => {
 		);
 	});
 
-	settings.watch<string>('Site_Name', (value = 'Rocket.Chat') => {
+	settings.watch<string>('Site_Name', (value = 'HPN') => {
 		const escapedValue = escapeHTML(value);
 		injectIntoHead(
 			'Site_Name',

@@ -156,9 +156,7 @@ export const createPushSettings = () =>
 			});
 			await this.add('Push_request_content_from_server', true, {
 				type: 'boolean',
-				enterprise: true,
 				invalidValue: false,
-				modules: ['push-privacy'],
 			});
 		});
 	});

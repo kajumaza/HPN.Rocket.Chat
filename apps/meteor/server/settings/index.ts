@@ -35,8 +35,10 @@ import { createUserDataSettings } from './userDataDownload';
 import { createVConfSettings } from './video-conference';
 import { createWebDavSettings } from './webdav';
 import { addMatrixBridgeFederationSettings } from '../services/federation/Settings';
+import { createHpnSettings } from './hpn';
 
 await Promise.all([
+	createHpnSettings(),
 	createFederationServiceSettings(),
 	createAccountSettings(),
 	createAnalyticsSettings(),

@@ -1,0 +1,14 @@
+{
+	"id": "a1b2c3d4-e5f6-4890-abcd-ef1234567890",
+	"name": "HPN Community",
+	"nameSlug": "hpn-community",
+	"description": "HPN business directory, supplier recommendations, recruitment, and community automation",
+	"version": "1.0.0",
+	"requiredApiVersion": "^1.4.0",
+	"author": {
+		"name": "Harmony People Network",
+		"support": "admin@hpn.community"
+	},
+	"classFile": "HpnCommunityApp.ts",
+	"iconFile": "icon.png"
+}

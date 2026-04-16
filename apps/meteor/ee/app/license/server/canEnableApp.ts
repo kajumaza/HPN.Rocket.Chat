@@ -28,10 +28,7 @@ export const _canEnableApp = async ({ Apps, License }: _canEnableAppDependencies
 	const source = getInstallationSourceFromAppStorageItem(app);
 	switch (source) {
 		case 'private':
-			if (await License.shouldPreventAction('privateApps')) {
-				throw new Error('license-prevented');
-			}
-
+			// HPN: private apps always allowed
 			break;
 		default:
 			if (await License.shouldPreventAction('marketplaceApps')) {

@@ -4,3 +4,5 @@ import './i18n';
 import './timesync';
 import './fileDecrypt';
 import './userDataDownload';
+import './hpnPayments';
+import './hpnDataExport';

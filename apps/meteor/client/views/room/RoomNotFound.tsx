@@ -12,7 +12,7 @@ const RoomNotFound = (): ReactElement => {
 		<RoomLayout
 			body={
 				<Box display='flex' justifyContent='center' height='full'>
-					<NotFoundState title={t('Room_not_found')} subtitle={t('Room_not_exist_or_not_permission')} />
+					<NotFoundState title='Restricted Access' subtitle='You do not have access to this room' />
 				</Box>
 			}
 		/>

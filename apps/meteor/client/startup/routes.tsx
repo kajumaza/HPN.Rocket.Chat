@@ -24,6 +24,9 @@ const OAuthAuthorizationPage = lazy(() => import('../views/oauth/OAuthAuthorizat
 const OAuthErrorPage = lazy(() => import('../views/oauth/OAuthErrorPage'));
 const NotFoundPage = lazy(() => import('../views/notFound/NotFoundPage'));
 const CallHistoryPage = lazy(() => import('../views/mediaCallHistory/CallHistoryPage'));
+const HpnDirectoryPage = lazy(() => import('../views/hpnDirectory/HpnDirectoryPage'));
+const HpnJobBoardPage = lazy(() => import('../views/hpnJobs/HpnJobBoardPage'));
+const HpnPollsPage = lazy(() => import('../views/hpnPolls/HpnPollsPage'));
 
 declare module '@rocket.chat/ui-contexts' {
 	interface IRouterPaths {
@@ -110,6 +113,18 @@ declare module '@rocket.chat/ui-contexts' {
 		'call-history': {
 			pathname: `/call-history${`/details/${string}` | ''}`;
 			pattern: '/call-history/:tab?/:historyId?';
+		};
+		'hpn-directory': {
+			pathname: '/hpn-directory';
+			pattern: '/hpn-directory';
+		};
+		'hpn-job-board': {
+			pathname: '/hpn-job-board';
+			pattern: '/hpn-job-board';
+		};
+		'hpn-polls': {
+			pathname: '/hpn-polls';
+			pattern: '/hpn-polls';
 		};
 	}
 }
@@ -238,6 +253,33 @@ router.defineRoutes([
 		element: appLayout.wrap(
 			<MainLayout>
 				<CallHistoryPage />
+			</MainLayout>,
+		),
+	},
+	{
+		path: '/hpn-directory',
+		id: 'hpn-directory',
+		element: appLayout.wrap(
+			<MainLayout>
+				<HpnDirectoryPage />
+			</MainLayout>,
+		),
+	},
+	{
+		path: '/hpn-job-board',
+		id: 'hpn-job-board',
+		element: appLayout.wrap(
+			<MainLayout>
+				<HpnJobBoardPage />
+			</MainLayout>,
+		),
+	},
+	{
+		path: '/hpn-polls',
+		id: 'hpn-polls',
+		element: appLayout.wrap(
+			<MainLayout>
+				<HpnPollsPage />
 			</MainLayout>,
 		),
 	},

@@ -6,23 +6,17 @@ export const createLayoutSettings = () =>
 			await this.add('Layout_Login_Hide_Logo', false, {
 				type: 'boolean',
 				public: true,
-				enterprise: true,
 				invalidValue: false,
-				modules: ['hide-watermark'],
 			});
 			await this.add('Layout_Login_Hide_Title', false, {
 				type: 'boolean',
 				public: true,
-				enterprise: true,
 				invalidValue: false,
-				modules: ['hide-watermark'],
 			});
 			await this.add('Layout_Login_Hide_Powered_By', false, {
 				type: 'boolean',
 				public: true,
-				enterprise: true,
 				invalidValue: false,
-				modules: ['hide-watermark'],
 			});
 			await this.add('Layout_Login_Template', 'horizontal-template', {
 				type: 'select',
@@ -37,9 +31,7 @@ export const createLayoutSettings = () =>
 					},
 				],
 				public: true,
-				enterprise: true,
 				invalidValue: 'horizontal-template',
-				modules: ['hide-watermark'],
 			});
 			await this.add('Accounts_ShowFormLogin', true, {
 				type: 'boolean',
@@ -87,9 +79,7 @@ export const createLayoutSettings = () =>
 				i18nDescription: 'Layout_Custom_Body_Only_Description',
 				type: 'boolean',
 				invalidValue: false,
-				enterprise: true,
 				public: true,
-				modules: ['hide-watermark'],
 				enableQuery: [
 					{
 						_id: 'Layout_Home_Body',
@@ -131,13 +121,13 @@ export const createLayoutSettings = () =>
 				multiline: true,
 				public: true,
 			});
-			await this.add('Layout_Sidenav_Footer_Dark', '<a href="/home"><img src="assets/logo_dark.png" alt="Home" /></a>', {
+			await this.add('Layout_Sidenav_Footer_Dark', '<a href="/home"><img src="assets/logo_dark.png" alt="HPN" /></a>', {
 				type: 'code',
 				code: 'text/html',
 				public: true,
 				i18nDescription: 'Layout_Sidenav_Footer_description',
 			});
-			return this.add('Layout_Sidenav_Footer', '<a href="/home"><img src="assets/logo.png" alt="Home" /></a>', {
+			return this.add('Layout_Sidenav_Footer', '<a href="/home"><img src="assets/logo.png" alt="HPN" /></a>', {
 				type: 'code',
 				code: 'text/html',
 				public: true,
@@ -208,11 +198,15 @@ export const createLayoutSettings = () =>
 			});
 		});
 		await this.section('Custom CSS', async function () {
-			await this.add('theme-custom-css', '', {
-				type: 'code',
-				code: 'text/css',
-				multiline: true,
-				public: true,
-			});
+			await this.add(
+				'theme-custom-css',
+				'',
+				{
+					type: 'code',
+					code: 'text/css',
+					multiline: true,
+					public: true,
+				},
+			);
 		});
 	});

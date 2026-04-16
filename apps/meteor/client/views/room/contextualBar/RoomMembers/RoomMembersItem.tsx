@@ -18,6 +18,7 @@ import { useState } from 'react';
 import UserActions from './RoomMembersActions';
 import { getUserDisplayNames } from '../../../../../lib/getUserDisplayNames';
 import InvitationBadge from '../../../../components/InvitationBadge';
+import HpnMemberBadge from '../../../../components/message/header/HpnMemberBadge';
 import { ReactiveUserStatus } from '../../../../components/UserStatus';
 import { usePreventPropagation } from '../../../../hooks/usePreventPropagation';
 import type { RoomMember } from '../../../hooks/useMembersList';
@@ -68,6 +69,7 @@ const RoomMembersItem = ({
 			<OptionColumn>{federated ? <Icon name='globe' size='x16' /> : <ReactiveUserStatus uid={_id} />}</OptionColumn>
 			<OptionContent data-qa={`MemberItem-${username}`}>
 				{nameOrUsername} {displayUsername && <OptionDescription>@{displayUsername}</OptionDescription>}
+				<HpnMemberBadge userId={_id} roomId={rid} />
 			</OptionContent>
 			{subscription?.status === 'INVITED' && (
 				<OptionColumn>

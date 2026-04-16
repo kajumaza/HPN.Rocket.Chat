@@ -108,6 +108,26 @@ declare module '@rocket.chat/ui-contexts' {
 			pathname: '/admin/ABAC';
 			pattern: '/admin/ABAC/:tab?/:context?/:id?';
 		};
+		'admin-hpn-directory': {
+			pathname: '/admin/hpn-directory';
+			pattern: '/admin/hpn-directory';
+		};
+		'admin-hpn-jobs': {
+			pathname: '/admin/hpn-jobs';
+			pattern: '/admin/hpn-jobs';
+		};
+		'admin-hpn-insights': {
+			pathname: '/admin/hpn-insights';
+			pattern: '/admin/hpn-insights';
+		};
+		'admin-hpn-settings': {
+			pathname: '/admin/hpn-settings';
+			pattern: '/admin/hpn-settings';
+		};
+		'admin-hpn-polls': {
+			pathname: '/admin/hpn-polls';
+			pattern: '/admin/hpn-polls';
+		};
 	}
 }
 
@@ -245,4 +265,29 @@ registerAdminRoute('/feature-preview', {
 registerAdminRoute('/ABAC/:tab?/:context?/:id?', {
 	name: 'admin-ABAC',
 	component: lazy(() => import('./ABAC/AdminABACRoute')),
+});
+
+registerAdminRoute('/hpn-directory', {
+	name: 'admin-hpn-directory',
+	component: lazy(() => import('./hpnDirectory/HpnDirectoryAdminPage')),
+});
+
+registerAdminRoute('/hpn-jobs', {
+	name: 'admin-hpn-jobs',
+	component: lazy(() => import('./hpnJobs/HpnJobsAdminPage')),
+});
+
+registerAdminRoute('/hpn-insights', {
+	name: 'admin-hpn-insights',
+	component: lazy(() => import('./hpnInsights/HpnInsightsDashboard')),
+});
+
+registerAdminRoute('/hpn-settings', {
+	name: 'admin-hpn-settings',
+	component: lazy(() => import('./hpnSettings/HpnSettingsAdminPage')),
+});
+
+registerAdminRoute('/hpn-polls', {
+	name: 'admin-hpn-polls',
+	component: lazy(() => import('./hpnPolls/HpnPollsAdminPage')),
 });

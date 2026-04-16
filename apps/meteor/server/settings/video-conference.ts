@@ -11,8 +11,6 @@ export const createVConfSettings = () =>
 		await this.add('VideoConf_Mobile_Ringing', false, {
 			type: 'boolean',
 			public: true,
-			enterprise: true,
-			modules: ['videoconference-enterprise'],
 			invalidValue: false,
 			alert: 'VideoConf_Mobile_Ringing_Alert',
 		});

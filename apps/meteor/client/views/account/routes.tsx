@@ -40,6 +40,14 @@ declare module '@rocket.chat/ui-contexts' {
 			pathname: '/account/accessibility-and-appearance';
 			pattern: '/account/accessibility-and-appearance';
 		};
+		'hpn-business-listing': {
+			pathname: '/account/hpn-business-listing';
+			pattern: '/account/hpn-business-listing';
+		};
+		'hpn-my-jobs': {
+			pathname: '/account/hpn-my-jobs';
+			pattern: '/account/hpn-my-jobs';
+		};
 	}
 }
 
@@ -87,4 +95,14 @@ registerAccountRoute('/feature-preview', {
 registerAccountRoute('/accessibility-and-appearance', {
 	name: 'accessibility-and-appearance',
 	component: lazy(() => import('./accessibility/AccessibilityPage')),
+});
+
+registerAccountRoute('/hpn-business-listing', {
+	name: 'hpn-business-listing',
+	component: lazy(() => import('./HpnBusinessListing')),
+});
+
+registerAccountRoute('/hpn-my-jobs', {
+	name: 'hpn-my-jobs',
+	component: lazy(() => import('./HpnMyJobs')),
 });

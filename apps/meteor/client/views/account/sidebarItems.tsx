@@ -1,4 +1,5 @@
 import { defaultFeaturesPreview, FeaturePreviewBadge } from '@rocket.chat/ui-client';
+import { Meteor } from 'meteor/meteor';
 
 import { hasPermission, hasAtLeastOnePermission } from '../../../app/authorization/client';
 import { createSidebarItems } from '../../lib/createSidebarItems';
@@ -59,5 +60,16 @@ export const {
 		href: '/account/accessibility-and-appearance',
 		i18nLabel: 'Accessibility_and_Appearance',
 		icon: 'person-arms-spread',
+	},
+	{
+		href: '/account/hpn-business-listing',
+		i18nLabel: 'My_Business_Listing',
+		icon: 'building',
+		permissionGranted: (): boolean => Meteor.user()?.roles?.includes('hpn-supplier') ?? false,
+	},
+	{
+		href: '/account/hpn-my-jobs',
+		i18nLabel: 'My_Job_Posts',
+		icon: 'briefcase',
 	},
 ]);
